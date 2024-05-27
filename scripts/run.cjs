@@ -11,7 +11,11 @@ const codes = [
 ]
 
 async function main() {
-    const { factory } = await hre.ignition.deploy(Factory);
+    const signers = await hre.ethers.getSigners()
+    console.log("account 0: ", signers[0].address)
+    const { factory } = await hre.ignition.deploy(Factory, {
+        from: signers[0],
+    });
     console.log(`Apollo deployed to: ${await factory.getAddress()}`);
     let res = await factory.setContractCode(1, codes[0])
     console.log(res.hash)

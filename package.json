@@ -1,7 +1,6 @@
 {
   "name": "contract-error-01",
   "module": "index.ts",
-  "type": "module",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "@types/bun": "latest"

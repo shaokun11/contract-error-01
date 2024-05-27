@@ -13,3 +13,7 @@ npx hardhat compile
 npx hardhat node
 node scripts/run.cjs
 ```
+
+### Result
+
+[error info](./static/img1.png)

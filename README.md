@@ -11,5 +11,5 @@ To run:
 ```bash
 npx hardhat compile
 npx hardhat node
-node scritps/run.cjs
+node scripts/run.cjs
 ```

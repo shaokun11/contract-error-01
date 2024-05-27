@@ -16,4 +16,4 @@ node scripts/run.cjs
 
 ### Result
 
-[error info](./static/img1.png)
+![error info](./static/img1.png)

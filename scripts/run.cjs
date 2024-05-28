@@ -16,19 +16,19 @@ async function main() {
         from: signers[0],
     });
     console.log(`Facotry deployed to: ${await factory.getAddress()}`);
-    let res = await factory.setContractCode(1, codes[0])
-    console.log(res.hash)
-    await res.wait()
-    res = await factory.setContractCode(2, codes[1])
-    console.log(res.hash)
-    await res.wait()
-    res = await factory.setContractCode(3, codes[2])
-    console.log(res.hash)
-    await res.wait()
-    console.log("factory.createPredictableCompetition.staticCall")
-    const startTime = Math.trunc(Date.now() / 1000) + 60
-    res = await factory.createPredictableCompetition.staticCall(
-        "0x0e1949e1e81135a7439162f2f2593a7810ea9f6d61fc19fc9abd25d5503cf1d8",
+    // let res = await factory.setContractCode(1, codes[0])
+    // console.log(res.hash)
+    // await res.wait()
+    // res = await factory.setContractCode(2, codes[1])
+    // console.log(res.hash)
+    // await res.wait()
+    // res = await factory.setContractCode(3, codes[2])
+    // console.log(res.hash)
+    // await res.wait()
+    // console.log("factory.createPredictableCompetition.staticCall")
+    const startTime = Math.trunc(Date.now() / 1000) + 60*60
+    let res = await factory.createPredictableCompetition.staticCall(
+        "0x0e1949e1e81135a7439162f2f2593a7810ea9f6d61fc19fc9abd25d5503cf1d1",
         "Champions League Final",
         2,
         startTime,
@@ -38,22 +38,22 @@ async function main() {
         100,
     );
     console.log(res)
-    res = await factory.createPaidPredictableCompetition(
-        "0x0e1949e1e81135a7439162f2f2593a7810ea9f6d61fc19fc9abd25d5503cf1d9",
-        "Champions League Final",
-        2,
-        startTime,
-        1748338332,
-        ["Real Madrid", "Liverpool"],
-        "https://editorial.uefa.com/resources/028d-1ad79495f1c0-f00d4da4f16e-1000/badges.jpeg",
-        100,
-        {
-            isNetworkToken: true,
-            paymentToken: "0x7cE15a41dD82818E1B3220d26Edf75B5EE68d581",
-            fee: 5000000000000000
-        }
-    )
-    console.log(res.hash)
+    // res = await factory.createPaidPredictableCompetition(
+    //     "0x0e1949e1e81135a7439162f2f2593a7810ea9f6d61fc19fc9abd25d5503cf1d3",
+    //     "Champions League Final",
+    //     2,
+    //     startTime,
+    //     1748338332,
+    //     ["Real Madrid", "Liverpool"],
+    //     "https://editorial.uefa.com/resources/028d-1ad79495f1c0-f00d4da4f16e-1000/badges.jpeg",
+    //     100,
+    //     {
+    //         isNetworkToken: true,
+    //         paymentToken: "0x7cE15a41dD82818E1B3220d26Edf75B5EE68d581",
+    //         fee: 5000000000000000
+    //     }
+    // )
+    // console.log(res.hash)
 }
 
 main().catch((error) => {

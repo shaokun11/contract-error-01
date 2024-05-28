@@ -17,6 +17,7 @@ async function main() {
     });
     console.log(`Facotry deployed to: ${await factory.getAddress()}`);
     let res = await factory.setContractCode(1, codes[0])
+    console.log(res.hash)
     await res.wait()
     res = await factory.setContractCode(2, codes[1])
     console.log(res.hash)
@@ -24,6 +25,7 @@ async function main() {
     res = await factory.setContractCode(3, codes[2])
     console.log(res.hash)
     await res.wait()
+    console.log("factory.createPredictableCompetition.staticCall")
     const startTime = Math.trunc(Date.now() / 1000) + 60
     res = await factory.createPredictableCompetition.staticCall(
         "0x0e1949e1e81135a7439162f2f2593a7810ea9f6d61fc19fc9abd25d5503cf1d8",

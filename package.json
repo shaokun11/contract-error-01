@@ -3,6 +3,7 @@
   "module": "index.ts",
   "scripts": {
     "compile": "hardhat compile",
+    "deploy":"hardhat ignition deploy ./ignition/modules/Factory.js  --network m1",
     "run": "HARDHAT_NETWORK=m1 node scripts/run.cjs"
   },
   "devDependencies": {

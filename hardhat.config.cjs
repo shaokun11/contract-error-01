@@ -14,7 +14,7 @@ module.exports = {
       url: "https://public.stackup.sh/api/v1/node/bsc-testnet",
       accounts: [key],
       chainId: 97,
-      gasPrice: 60*1e9,
+      gasPrice: 6*1e9,
       gas: 6*1e6
     }
   },
